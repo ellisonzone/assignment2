@@ -5,32 +5,37 @@ const itemsObject = [
   { quantity: 5, price: 400 },
 ];
 //1.1
-console.log(`1.1. New array which doubles the quantity and price: `);
-console.log(
-  itemsObject.map((e) => {
+const doubleObj = (obj) => {
+  return obj.map((e) => {
     return { quantity: e.quantity * 2, price: e.price * 2 };
-  })
-);
+  });
+};
 
-//1.2
 console.log(
-  `1.2. New array which contains item quantity > 2 and price > 300 only:`
+  "1.1. New array which doubles the quantity and price: \n",
+  doubleObj(itemsObject)
 );
-console.log(
-  itemsObject.filter((e) => {
+//1.2
+const filterObj = (obj) => {
+  return obj.filter((e) => {
     return e.quantity > 2 && e.price > 300;
-  })
+  });
+};
+
+console.log(
+  "1.2. New array which contains item quantity > 2 and price > 300 only: \n",
+  filterObj(itemsObject)
 );
 //1.3
-console.log(
-  `1.3. Calculate the total value of the items by implementing a function. Total value is:`
-);
-console.log(
-  itemsObject.reduce((total, e) => {
+const totalValue = (obj) => {
+  return obj.reduce((total, e) => {
     return (total += e.quantity * e.price);
-  }, 0)
+  }, 0);
+};
+console.log(
+  "1.3. Calculate the total value of the items by implementing a function. Total value is:\n" +
+    totalValue(itemsObject)
 );
-
 //Problem 2
 const string = `Perhaps The Easiest-to-understand    Case    For Reduce Is    To Return The Sum Of   All The Elements In   An Array`;
 /**Given the string, implement a function to remove all the non-alphabet characters and
