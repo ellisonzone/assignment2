@@ -57,5 +57,27 @@ const second = [
   { uuid: 1, role: "manager" },
   { uuid: 2, role: "associate" },
 ];
-const mergedObj = [...first, ...second];
-console.log(mergedObj);
+newArr = (arr1, arr2) => {
+  let result = [];
+  for (let i = 0; i < arr1.length; i++) {
+    result.push({
+      uuid: arr1[i].uuid,
+      name: arr1[i].name,
+      role: null,
+    });
+  }
+  for (let i = 0; i < arr1.length; i++) {
+    result.push({
+      uuid: arr2[i].uuid,
+      name: null,
+      role: arr2[i].role,
+    });
+  }
+  result.sort((a, b) => {
+    return a.uuid - b.uuid;
+  });
+
+  return result;
+};
+console.log(`3.Merged and sorted string:`);
+console.log(newArr(first, second));
