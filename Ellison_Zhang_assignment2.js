@@ -23,7 +23,7 @@ const filterObj = (obj) => {
 };
 
 console.log(
-  "1.2. New array which contains item quantity > 2 and price > 300 only: \n",
+  "\n1.2. New array which contains item quantity > 2 and price > 300 only: \n",
   filterObj(itemsObject)
 );
 //1.3
@@ -33,24 +33,23 @@ const totalValue = (obj) => {
   }, 0);
 };
 console.log(
-  "1.3. Calculate the total value of the items by implementing a function. Total value is:\n" +
+  "\n1.3. Calculate the total value of the items by implementing a function. Total value is:\n" +
     totalValue(itemsObject)
 );
-//Problem 2
+
+/**Problem 2: Given the string, implement a function to remove all the non-alphabet characters and
+  extra space in the string and convert the string to all lowercase. */
+
 const string = `Perhaps The Easiest-to-understand    Case    For Reduce Is    To Return The Sum Of   All The Elements In   An Array`;
-/**Given the string, implement a function to remove all the non-alphabet characters and
-extra space in the string and convert the string to all lowercase. */
-const regex = /[^A-Za-z0-9]\s+/g;
-
 const newStr = () => {
-  return string.replace(regex, "").trim().toLowerCase();
+  return string.replace(/[- ]+/g, " ").trim().toLowerCase();
 };
-console.log("2.New String: \n" + newStr());
+console.log("\n2.New String: \n" + newStr());
 
-//Problem 3
-/**Implement a function to merge two arrays of objects on uuid, but first has uuid and
-name, second has uuid and role. With the not existing property, fill with null. Sort
-according to uuid after merge. */
+/**Problem 3: Implement a function to merge two arrays of objects on uuid, but first has uuid and
+  name, second has uuid and role. With the not existing property, fill with null. Sort
+  according to uuid after merge. */
+
 const first = [
   { uuid: 2, name: "test" },
   { uuid: 5, name: "test5" },
@@ -84,5 +83,5 @@ newArr = (arr1, arr2) => {
 
   return result;
 };
-console.log(`3.Merged and sorted string:`);
-console.log(newArr(first, second));
+
+console.log("\n3.Merged and sorted string:", newArr(first, second));
